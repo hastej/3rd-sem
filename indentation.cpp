@@ -5,13 +5,13 @@ using namespace std;
 
 
 int is_intended(stack<int>* s, int count,int line){
-    if( s->top() <= count || s->size() == 0){
+
+    if(s->size() == 0 || s->top() <= count ){
+        cout<<endl<<0;
         s->push(count);
     }
 
     else{
-        
-
         while(s->size()!=0 && s->top() > count){
             s->pop();
         }
@@ -20,10 +20,10 @@ int is_intended(stack<int>* s, int count,int line){
             printf("\nThis File Is Not Properly Indented\nError Found At Line %d, Not Properly Indented\n",line);
             return -1;
         }
-
-        return 1;
-
+       
     }
+
+     return 1;
 }
 
 int main(){
@@ -37,13 +37,11 @@ int main(){
         cout<<"File entered does not exist;Try again"<<endl<<"Create test case file then input again at command prompt\n";
     }
 
-    stack<int> *S;
+    stack<int> *S = new stack<int>;
     int error = 1, currentline = 1,count = 0;;
 
 
     while(1){
-
-        cout<<1;
 
         char ch;
         ch=fgetc(fp);
@@ -64,7 +62,7 @@ int main(){
         }
 
         error=is_intended(S,count,currentline);
-        
+
         if(error==-1){
             break;
         }

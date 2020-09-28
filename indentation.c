@@ -44,9 +44,9 @@ int is_intended(struct stack* S,int count,int line){
             return -1;
         }
 
-        return 1;
-
     }
+
+    return 1;
 }
 
 int main(){
