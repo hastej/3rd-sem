@@ -53,11 +53,9 @@ int main(){
 
     int count = 0;
     int islineempty = 1;
-    int ok = 1;
+    int error = 1;
 
     int currentline = 1;
-
-    
 
     FILE *fp;
     struct stack S1;
@@ -98,21 +96,19 @@ int main(){
         }
 
         
-            ok=is_intended(&S1,count,currentline);
+            error=is_intended(&S1,count,currentline);
         
 
-        if(ok==-1){
+        if(error==-1){
             break;
         }
 
         currentline++;
     }
 
-    if(ok != -1 ){
+    if(error != -1 ){
         printf("\nTHIS FILE IS PROPERLY INDENTED.");
     }
-
-
 
     return 0;
 

@@ -2,6 +2,18 @@
 
 using namespace std;
 
+void inputsp(int matrix[][3],int n){
+
+    for(int i = 0;i<n;i++){
+
+        cout<<"Input row ,col and val of element "<< i+1<<" : ";
+        cin>>matrix[i][0];
+        cin>>matrix[i][1];
+        cin>>matrix[i][2];   
+    }
+
+}
+
 void display(int size,int mat[][3]){
 
       int k = 0;
@@ -19,15 +31,9 @@ void display(int size,int mat[][3]){
      
 }
 
-void transposing(int matrix[][3],int n){
-    for(int i = 0;i<n;i++){
-        int swap = matrix[i][0];
-        matrix[i][0] = matrix[i][1];
-        matrix[i][1] = swap;
-    }
+void sorting(int matrix[][3],int n){
 
-    
-    for(int i = 0;i<n-1;i++){
+        for(int i = 0;i<n-1;i++){
         for(int j = 0;j<n-1;j++){
             if(matrix[j][0]*10 + matrix[j][1]>=matrix[j+1][0]*10 + matrix[j+1][1]){
                 //swaping
@@ -37,7 +43,15 @@ void transposing(int matrix[][3],int n){
             }
         }
     }
+}
 
+void transposing(int matrix[][3],int n){
+    for(int i = 0;i<n;i++){
+        int swap = matrix[i][0];
+        matrix[i][0] = matrix[i][1];
+        matrix[i][1] = swap;
+    }
+    sorting(matrix,n);
 }
 
 void transpose(){
@@ -50,53 +64,26 @@ void transpose(){
     cin>>n;
     int matrix[n][3];
 
-    for(int i = 0;i<n;i++){
-
-        cout<<"Input row : ";
-        cin>>matrix[i][0];
-
-        cout<<"Input col : ";
-        cin>>matrix[i][1];
-
-        cout<<"Input value : ";
-        cin>>matrix[i][2];   
-    }
+    inputsp(matrix,n);
     
+    cout<<endl<<"Input matrix is : "<<endl;
+    display(size,matrix);
+
     transposing(matrix,n);
-    
+
+    cout<<endl<<"Transpose matrix is : "<<endl;
     display(size,matrix);
     
 }
 
 void inputformultiply(int size,int n1,int n2,int matrix1[][3],int matrix2[][3]){
-      for(int i = 0;i<n1;i++){
-
-        cout<<"Input row : ";
-        cin>>matrix1[i][0];
-
-        cout<<"Input col : ";
-        cin>>matrix1[i][1];
-
-        cout<<"Input value : ";
-        cin>>matrix1[i][2];   
-    }
-
+   
+    inputsp(matrix1,n1);
+    cout<<endl<<"Matrix1 is : "<<endl;
     display(size,matrix1);
     
-    for(int i = 0;i<n2;i++){
-
-        cout<<"Input row : ";
-        cin>>matrix2[i][0];
-
-        cout<<"Input col : ";
-        cin>>matrix2[i][1];
-
-        cout<<"Input value : ";
-        cin>>matrix2[i][2];   
-    }
-    
-    cout<<"Transpose matrix is : "<<endl;
-
+    inputsp(matrix2,n2);
+    cout<<endl<<"Matrix 2 is :"<<endl;
     display(size,matrix2);
 
 }
@@ -141,7 +128,7 @@ void multiply(){
         }
     }
 
-    cout<<"multiplied matrix is : "<<endl;
+    cout<<endl<<"Multiplied matrix is : "<<endl;
     display(size,ans);
    
 }
