@@ -26,6 +26,7 @@ class stack{
     stack(int data){
         this->head = new Node(data);
         tail = head;
+        size++;
     }
 
     void push(int data){
@@ -33,22 +34,24 @@ class stack{
         Node* ele = new Node(data);
         tail->next = ele;
         tail = ele;
+        size++;
     }
 
     void pop(){
 
         Node* ele = head;
 
-        while(ele->next!=tail){
+        for(int i =1;i<size-1;i++){
             ele = ele->next;
         }
 
         ele->next = nullptr;
         tail = ele;
+        size--;
     
     }
 
-    int top(){
+    int topofstack(){
 
         return tail->val;
 
@@ -60,7 +63,7 @@ class stack{
         
          Node* ele = head;
 
-        while(ele->next!=tail){
+         for(int i =0;i<size-1;i++){
             cout<<ele->val<<" -> ";
             ele = ele->next;
         }
@@ -98,8 +101,8 @@ int main(){
          st->pop();
          }
         if(i==3){
-            cout<<endl<<"Top of stack is  : ";
-            cout<<st->top()<<endl;
+            cout<<endl<<"Top of stack is : ";
+            cout<<st->topofstack()<<endl;
         }
         if(i==4)
         st->display();
