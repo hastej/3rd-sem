@@ -78,7 +78,7 @@ int main(){
     
     int data;
 
-    cout<<"Enter first element of stack";
+    cout<<"Enter first element of stack : ";
 
     cin>>data; 
 

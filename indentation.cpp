@@ -7,7 +7,7 @@ using namespace std;
 int is_intended(stack<int>* s, int count,int line){
 
     if(s->size() == 0 || s->top() <= count ){
-        cout<<endl<<0;
+        
         s->push(count);
     }
 
