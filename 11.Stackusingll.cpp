@@ -31,6 +31,15 @@ class stack{
 
     void push(int data){
 
+        if(size==0){
+            Node* ele = new Node(data);
+            head = ele;
+            tail = ele;
+            size++;
+            return;
+            
+        }
+
         Node* ele = new Node(data);
         tail->next = ele;
         tail = ele;
@@ -38,6 +47,16 @@ class stack{
     }
 
     void pop(){
+
+        
+        if(size==1){
+            
+            head = nullptr;
+            tail = nullptr;
+            size--;
+            return;
+            
+        }
 
         Node* ele = head;
 
