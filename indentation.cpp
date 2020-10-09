@@ -3,7 +3,6 @@
 
 using namespace std;
 
-
 int is_intended(stack<int>* s, int count,int line){
 
     if(s->size() == 0 || s->top() <= count ){
@@ -17,7 +16,7 @@ int is_intended(stack<int>* s, int count,int line){
         }
 
         if(s->top() != count){
-            printf("\nThis File Is Not Properly Indented\nError Found At Line %d, Not Properly Indented\n",line);
+            cout<<"This File Is Not Properly Indented"<<endl<<"Error Found At Line "<<line<<", Not Properly Indented";
             return -1;
         }
        
@@ -34,7 +33,8 @@ int main(){
     fp=fopen(filename,"r");
     
     if(fp==NULL){
-        cout<<"File entered does not exist;Try again"<<endl<<"Create test case file then input again at command prompt\n";
+        cout<<"File entered does not exist;Try again"<<endl;
+        exit(1);
     }
 
     stack<int> *S = new stack<int>;
