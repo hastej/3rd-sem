@@ -87,7 +87,7 @@ class stack{
             ele = ele->next;
         }
 
-        cout<<tail->val<<endl;
+        if(size!=0)cout<<tail->val<<endl;
 
     }
 
