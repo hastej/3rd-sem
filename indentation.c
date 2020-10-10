@@ -40,7 +40,7 @@ int is_intended(struct stack* S,int count,int line){
         }
 
         if(S->val[S->top] != count){
-            printf("\nThis File Is Not Properly Indented\nError Found At Line %d, Not Properly Indented\n",line);
+            printf("This File Is Not Properly Indented\nError Found At Line %d, Not Properly Indented\n",line);
             return -1;
         }
 
@@ -64,13 +64,11 @@ int main(){
     char filename[100] ;
 
     scanf("%s",&filename); 
-
-    printf("%s",filename);
           
     fp=fopen(filename,"r");
     
     if(fp==NULL){
-        printf("\nFile entered does not exist;Try again\nCreate test case file then input again at command prompt\n");
+        printf("File entered does not exist;Try again\nCreate test case file then input again at command prompt\n");
         exit(1);
     }
 
@@ -107,7 +105,7 @@ int main(){
     }
 
     if(error != -1 ){
-        printf("\nTHIS FILE IS PROPERLY INDENTED.");
+        printf("THIS FILE IS PROPERLY INDENTED.");
     }
 
     return 0;
