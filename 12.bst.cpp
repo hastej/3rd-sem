@@ -1,5 +1,4 @@
 #include<iostream>
-#include<vector>
 
 using namespace std;
 
@@ -58,10 +57,6 @@ int main()
 
     Node* node = new Node(valroot);
 
-    display(node);
-
-    int choice;
-
     int n = 0;
 
     while (n!=4)
@@ -88,16 +83,17 @@ int main()
             cin>>num;
             if(search(node,num)==true)
             {
-                cout<<num<<" is  present in the tree"<<endl;
+                cout<<num<<" is present in the tree"<<endl;
             }else
             {
                 cout<<num<<" is not present in the tree"<<endl;
             }
-            
-            break;
+        
         }
+
         else if(n==3)
             display(node);
+
         else break;
     }
 
