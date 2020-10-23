@@ -91,7 +91,7 @@ int main()
         else if(n==3){
            
             display(node);
-            cout<<endl<<endl;}
+            cout<<"end"<<endl<<endl;}
 
         else break;
     }
