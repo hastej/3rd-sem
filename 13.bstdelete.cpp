@@ -39,15 +39,12 @@ Node* DeleteAllLeafNodes(Node* root)
 { 
     if (root == nullptr) 
     return nullptr; 
-     
-    Node* prev = nullptr;
 
     if (root->left == nullptr && root->right == nullptr) { 
         
-        return prev; 
+        return nullptr; 
     } 
   
-    prev = root;
     root->left = DeleteAllLeafNodes(root->left); 
     root->right = DeleteAllLeafNodes(root->right); 
   
