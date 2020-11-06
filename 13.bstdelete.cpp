@@ -77,7 +77,7 @@ int main()
             int val;
             cout << "Enter the number you want to add: ";
             cin >> val;
-            addData(root,val);
+            root = addData(root,val);
         }
          else if(n==2){
              root = DeleteAllLeafNodes(root);
