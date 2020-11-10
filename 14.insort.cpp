@@ -21,6 +21,16 @@ void insertionsort(vector<int> &arr, int n)
 	} 
 } 
 
+void display(vector<int> &arr,int n){
+
+    for (int i = 0; i < n; i++) 
+    {
+		cout << arr[i] << " "; 
+    }
+
+	cout << endl;
+}
+
 int main() 
 { 
     int n;
@@ -34,25 +44,13 @@ int main()
     }
 
     cout<<endl<<"Array is : ";
-
-    for (int i = 0; i < n; i++) 
-    {
-		cout << arr[i] << " "; 
-    }
-
-    cout<<endl<<endl;
-
+    display(arr,n);
+    cout<<endl;
 
 	insertionsort(arr, n); 
 
     cout<<"Sorted array is : ";
-
-    for (int i = 0; i < n; i++) 
-    {
-		cout << arr[i] << " "; 
-    }
-
-	cout << endl;
+    display(arr,n);
 
 	return 0; 
 }
